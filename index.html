@@ -13,17 +13,15 @@
         color: #fff;
     }
     .grid-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
         padding: 20px;
     }
     .video-container {
         position: relative;
         overflow: hidden;
         padding-bottom: 56.25%;
-        margin: 10px;
-        width: 300px; /* Ancho de los videos en la grilla */
     }
     .video-container iframe {
         position: absolute;
@@ -44,8 +42,8 @@
 
     /* Media Query para dispositivos con un ancho máximo de 600px */
     @media only screen and (max-width: 600px) {
-        .video-container {
-            width: 100%; /* Videos ocupan todo el ancho en dispositivos móviles */
+        .grid-container {
+            grid-template-columns: 1fr; /* Cambia a una columna en dispositivos móviles */
         }
     }
 </style>
