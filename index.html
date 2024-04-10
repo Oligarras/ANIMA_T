@@ -13,14 +13,17 @@
         color: #fff;
     }
     .grid-container {
-        display: grid;
-        grid-gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         padding: 20px;
     }
     .video-container {
         position: relative;
         overflow: hidden;
         padding-bottom: 56.25%;
+        margin: 10px;
+        width: 300px; /* Ancho de los videos en la grilla */
     }
     .video-container iframe {
         position: absolute;
@@ -41,8 +44,8 @@
 
     /* Media Query para dispositivos con un ancho máximo de 600px */
     @media only screen and (max-width: 600px) {
-        .grid-container {
-            grid-template-columns: 1fr; /* Una sola columna */
+        .video-container {
+            width: 100%; /* Videos ocupan todo el ancho en dispositivos móviles */
         }
     }
 </style>
